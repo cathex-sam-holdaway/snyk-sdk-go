@@ -9,6 +9,8 @@ import (
 // Use the beta version of the REST API as targets cannot be retrieved from the stable version.
 // Limit the targets returned to those imported by the GitHub Enterprise integration so that
 // we only see GitHub repos (need to refactor this or create separate functions to return different target types)
+// I'm also overriding the default limit of 10 targets per page on the API to 100.
+// TODO: Find a way to use a paginated query
 const targetBasePath = "orgs/%v/targets?version=2023-09-29~beta&limit=100&origin=github-enterprise"
 
 // TargetsService handles communication with the target related methods of the Snyk REST API.
