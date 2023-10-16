@@ -14,9 +14,9 @@ import (
 
 const (
 	libraryVersion   = "0.4.1"
-	defaultBaseURL   = "https://snyk.io/api/"
-	defaultMediaType = "application/json"
-	defaultUserAgent = "snyk-sdk-go/" + libraryVersion + " (+https://github.com/pavel-snyk/snyk-sdk-go)"
+	defaultBaseURL   = "https://api.snyk.io/rest/"
+	defaultMediaType = "application/vnd.api+json"
+	defaultUserAgent = "snyk-sdk-go/" + libraryVersion + " (+https://github.com/cathex-sam-holdaway/snyk-sdk-go)"
 
 	headerSnykRequestID = "snyk-request-id"
 )
@@ -35,6 +35,7 @@ type Client struct {
 	Orgs         *OrgsService
 	Projects     *ProjectsService
 	Users        *UsersService
+	Targets      *TargetsService
 }
 
 type service struct {
@@ -89,6 +90,7 @@ func NewClient(token string, opts ...ClientOption) *Client {
 	c.Orgs = (*OrgsService)(&c.common)
 	c.Projects = (*ProjectsService)(&c.common)
 	c.Users = (*UsersService)(&c.common)
+	c.Targets = (*TargetsService)(&c.common)
 
 	return c
 }

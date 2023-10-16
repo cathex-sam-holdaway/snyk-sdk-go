@@ -1,8 +1,12 @@
-module github.com/pavel-snyk/snyk-sdk-go
+module github.com/cathex-sam-holdaway/snyk-sdk-go
 
 go 1.18
 
-require github.com/stretchr/testify v1.8.0
+require (
+	github.com/joho/godotenv v1.5.1
+	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/stretchr/testify v1.8.0
+)
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
