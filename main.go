@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 
 	"github.com/cathex-sam-holdaway/snyk-sdk-go/snyk"
@@ -35,5 +36,7 @@ func main() {
 		fmt.Printf("error getting targets : %v", err)
 	}
 
-	fmt.Println(targets)
+	output, _ := json.Marshal(targets)
+
+	fmt.Println(string(output))
 }
