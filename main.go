@@ -13,7 +13,6 @@ import (
 type Snyk struct {
 	Client       *snyk.Client
 	SnykApiToken string `envconfig:"SNYK_API_TOKEN" required:"true"`
-	DummyVar     string `envconfig:"DUMMY_VAR" required:"true"`
 }
 
 func main() {
